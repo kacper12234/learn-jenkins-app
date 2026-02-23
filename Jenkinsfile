@@ -28,13 +28,13 @@ pipeline {
                             image 'node:18-alpine'
                             reuseNode true
                         }
+                    }
+                    steps {
+                        sh '''
+                           npm test
+                        '''
+                    }
                 }
-                steps {
-                    sh '''
-                        npm test
-                    '''
-                }
-            }
                 stage('E2E') {
                     agent {
                         docker {
