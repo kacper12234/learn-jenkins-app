@@ -77,7 +77,7 @@ pipeline {
                 }
             }
             environment {
-                CI_ENVIRONMENT_URL = ""
+                CI_ENVIRONMENT_URL = "."
             }
             steps {
                 sh '''
@@ -111,7 +111,7 @@ pipeline {
                 }
             }
             environment {
-                CI_ENVIRONMENT_URL = ""
+                CI_ENVIRONMENT_URL = "."
             }
             steps {
                 sh '''
