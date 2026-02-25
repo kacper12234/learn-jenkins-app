@@ -1,10 +1,12 @@
-agent any
+pipeline {
+    agent any
 
-    stages {
+        stages {
 
-        stage('Build') {
-            steps {
-                sh 'docker build -t node_test_deploy_netlify .'
+            stage('Build') {
+                steps {
+                    sh 'docker build -t node_test_deploy_netlify .'
+                }
             }
         }
-    }
+}
