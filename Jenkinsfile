@@ -9,11 +9,6 @@ pipeline {
 
     stages {
 
-        stage('Docker') {
-            steps {
-                sh 'docker build -t node_test_deploy_netlify .'
-            }
-        }
         stage('Build') {
             agent {
                 docker {

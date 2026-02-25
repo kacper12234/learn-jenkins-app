@@ -1,0 +1,10 @@
+agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t node_test_deploy_netlify .'
+            }
+        }
+    }
