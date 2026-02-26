@@ -1,13 +1,7 @@
 FROM amazon/aws-cli
 
-RUN yum install -y \
-        jq \
-        curl \
-        tar \
-        gzip \
-        ca-certificates \
-    && curl -L https://download.docker.com/linux/static/stable/x86_64/docker-26.1.0.tgz \
-       | tar -xz \
-    && mv docker/docker /usr/local/bin/docker \
-    && rm -rf docker \
+RUN yum install -y yum-utils jq ca-certificates \
+    && yum-config-manager \
+       --add-repo https://download.docker.com/linux/amazonlinux/docker-ce.repo \
+    && yum install -y docker-ce-cli \
     && docker --version
