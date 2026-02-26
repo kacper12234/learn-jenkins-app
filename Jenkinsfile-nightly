@@ -5,7 +5,8 @@ pipeline {
 
             stage('Build') {
                 steps {
-                    sh 'docker build -t node_test_deploy_netlify .'
+                    sh 'docker build -f ci/Dockerfile-playwright -t node_test_deploy_netlify .'
+                    sh 'docker build -f ci/Dockerfile-aws-cli -t my-aws-cli .'
                 }
             }
         }
