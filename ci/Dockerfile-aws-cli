@@ -1,7 +1,8 @@
-FROM amazon/aws-cli
+FROM docker:26-cli
 
-RUN yum install -y yum-utils jq ca-certificates \
-    && yum-config-manager \
-       --add-repo https://download.docker.com/linux/amazonlinux/docker-ce.repo \
-    && yum install -y docker-ce-cli \
-    && docker --version
+RUN apk add --no-cache \
+    aws-cli \
+    jq \
+    bash
+
+RUN docker --version && aws --version
